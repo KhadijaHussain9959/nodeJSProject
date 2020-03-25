@@ -8,7 +8,18 @@ const http = require("http"); //./ local module
 // execute for every incoming request
 
 const server = http.createServer((req, res) => {
-  console.log(req);
+  console.log(req.url, req.method, req.headers);
+  //req of incoming request node object
+  //process.exit();
+
+  res.setHeader("Content-Type", "text/html");
+  res.write("<html>");
+  res.write("<head><title>My first page</title></head>"); //lines of response
+  res.write("<body>");
+  res.write("<h1> hello from my node.js server</h1>");
+  res.write("</body>");
+  res.write("</html>");
+  res.end();
 });
 
 server.listen(3000);
