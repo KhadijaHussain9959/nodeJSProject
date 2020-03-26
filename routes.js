@@ -3,6 +3,7 @@ const fs = require("fs");
 const reqHandler = (req, res) => {
   const url = req.url;
   const method = req.method;
+  console.log("start of server");
   if (url === "/") {
     res.setHeader("Content-Type", "text/html");
     res.write("<html>");

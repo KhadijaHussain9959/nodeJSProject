@@ -4,7 +4,7 @@ const routes = require("./routes.js");
 
 const server = http.createServer(routes);
 //if more modules
-// const server = http.createServer(routes.handler,routes.second);
+// const server = http.createServer(routes.handler,routes.second );
 
 //take request listener as arg which is function
 // execute for every incoming request
