@@ -1,8 +1,10 @@
 const http = require("http");
 
-const routes = require("./routes.js");
+const express = require("express");
 
-const server = http.createServer(routes);
+const app = express();
+
+const server = http.createServer(app);
 //if more modules
 // const server = http.createServer(routes.handler,routes.second );
 
