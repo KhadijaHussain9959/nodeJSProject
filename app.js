@@ -3,28 +3,18 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+const adminRoutes = require("./routes/admin");
+const shopRoutes = require("./routes/shop");
+
 app.use(bodyParser.urlencoded({ extended: false }));
 //this is func for it register middleware
 // console.log req.body work bcoz of this .this always add next()
 
-app.use("/add-product", (req, res, next) => {
-  //return page with form
-  res.send(
-    '<html><form action="/product" method="POST"><input type="text" name="title"><button type="submit">add product</button></form></html>'
-  );
-});
+app.use(adminRoutes);
+app.use(shopRoutes);
 
-app.use("/product", (req, res, next) => {
-  console.log(req.body);
-
-  //body m jo hoga add that will display that  run bcz of bodyparser
-  res.redirect("/");
-  //redirect to slash
-});
-
-app.use("/", (req, res, next) => {
-  res.send("<h1>hello from express</h1>");
-  //send a response
+app.use((req, res, next) => {
+  res.status(404).send("<h1>Page not founddd</h1>");
 });
 
 app.listen(3000);
