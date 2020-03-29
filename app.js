@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+//routes
+
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
@@ -13,10 +15,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // console.log req.body work bcoz of this .this always add next()
 
 app.use(express.static(path.join(__dirname, "public")));
+//public static
 
 app.use("/admin", adminRoutes);
-// /admin in filter
 app.use(shopRoutes);
+// /admin in filter
+// if dont use get and post, app.use just match startpath
 
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
