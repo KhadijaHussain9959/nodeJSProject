@@ -7,7 +7,7 @@ const app = express();
 
 //routes
 
-const adminRoutes = require("./routes/admin");
+const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -17,7 +17,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 //public static
 
-app.use("/admin", adminRoutes);
+app.use("/admin", adminData.routes);
+// admin data refer to all routes
 app.use(shopRoutes);
 // /admin in filter
 // if dont use get and post, app.use just match startpath
