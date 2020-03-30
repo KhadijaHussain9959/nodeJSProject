@@ -18,14 +18,16 @@ router.get("/add-product", (req, res, next) => {
 
 router.post("/add-product", (req, res, next) => {
   products.push({ title: req.body.title });
-  //console.log(req.body);
-  //body m jo hoga add that will display that  run bcz of bodyparser
+
   res.redirect("/");
   //redirect to slash
 });
 
 exports.routes = router;
 exports.products = products;
+
+//console.log(req.body);
+//body m jo hoga add that will display that  run bcz of bodyparser
 
 //return page with form
 //   res.send(
