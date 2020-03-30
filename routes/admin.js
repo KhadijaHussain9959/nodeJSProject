@@ -6,6 +6,8 @@ const rootDir = require("../util/path");
 
 const router = express.Router();
 
+const products = [];
+
 // /admin.add-product => GET
 
 router.get("/add-product", (req, res, next) => {
@@ -21,7 +23,8 @@ router.post("/add-product", (req, res, next) => {
   //redirect to slash
 });
 
-module.exports = router;
+exports.routes = router;
+exports.products = products;
 
 //return page with form
 //   res.send(
