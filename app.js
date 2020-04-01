@@ -5,6 +5,11 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+//template engines
+
+app.set("vire engine", "ejs");
+app.set("views", "view");
+
 //routes
 
 const adminData = require("./routes/admin");
