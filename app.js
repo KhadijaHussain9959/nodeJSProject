@@ -7,8 +7,8 @@ const app = express();
 
 //template engines
 
-app.set("vire engine", "ejs");
-app.set("views", "view");
+app.set("view engine", "ejs");
+app.set("views", "views");
 
 //routes
 
