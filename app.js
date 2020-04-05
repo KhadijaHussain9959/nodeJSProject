@@ -12,7 +12,7 @@ app.set("views", "views");
 
 //routes
 
-const adminData = require("./routes/admin");
+const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 //public static
 
-app.use("/admin", adminData.routes);
+app.use("/admin", adminRoutes);
 // admin data refer to all routes
 app.use(shopRoutes);
 // /admin in filter
