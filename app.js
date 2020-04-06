@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+//controller
+const errorController = require("./controllers/error");
+
 //template engines
 
 app.set("view engine", "ejs");
@@ -28,10 +31,7 @@ app.use(shopRoutes);
 // /admin in filter
 // if dont use get and post, app.use just match startpath
 
-app.use((req, res, next) => {
-  res.status(404).render("404", { pageTitle: "Page Not Found" });
-  // res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
-});
+app.use(errorController.get404);
 
 app.listen(3000);
 
