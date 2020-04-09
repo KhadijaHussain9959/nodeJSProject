@@ -11,6 +11,10 @@ const router = express.Router();
 
 router.get("/add-product", productsController.getAddProduct);
 
+router.get("/add-product", (re1, res, next) => {
+  res.render("signin");
+});
+
 // /admin.add-product => POST
 
 router.post("/add-product", productsController.postAddProduct);
