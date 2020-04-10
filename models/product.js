@@ -31,13 +31,6 @@ module.exports = class Product {
         console.log(err);
       });
     });
-
-    // fs.readFile(p, (err, fileContent) => {
-    //   //   let products = [];
-    //   //   if (!err) {
-    //   //     products = JSON.parse(fileContent);
-    //   //   }
-    // });
   }
 
   static fetchAll(cb) {

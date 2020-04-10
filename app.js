@@ -9,12 +9,10 @@ const app = express();
 const errorController = require("./controllers/error");
 
 //template engines
-
 app.set("view engine", "ejs");
 app.set("views", "views");
 
 //routes
-
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
