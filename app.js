@@ -18,6 +18,7 @@ const shopRoutes = require("./routes/shop");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 //this is func for it register middleware
+
 // console.log req.body work bcoz of this .this always add next()
 
 app.use(express.static(path.join(__dirname, "public")));
